@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Giulio's Photo Gallery</title>
+        <style>
+            body {
+                font-family: "Trebuchet MS", Tahoma, sans-serif;
+                line-height: 1.6;
+                margin: 20px;
+                background-color: #f5f5f5;
+                color: #333;
+            }
+            .gallery-container {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 15px;
+                max-width: 1200px;
+                margin: 0 auto;
+            }
+            .gallery-container img {
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            .gallery-container img:hover {
+                transform: scale(1.05);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            .gallery-title {
+                text-align: center;
+                font-size: 24px;
+                margin-bottom: 20px;
+                color: #555;
+            }
+            .return-link {
+	            position: absolute;
+    	        bottom: 20px;
+        	    left: 50%;
+            	transform: translateX(-50%);
+	            font-size: 16px;
+    	        color: #000000;
+        	    text-decoration: none;
+	        }
+    	    .return-link:hover {
+        	    text-decoration: underline;
+       		}
+        </style>
+    </head>
+    <body>
+        <h1 class="gallery-title">Capital Gallery</h1>
+        <div class="gallery-container">
+            <img src="https://ik.imgkit.net/3vlqs5axxjf/external/ik-seo/http://images.ntmllc.com/v4/destination/France/Paris/112102_SCN1_Paris_iStock000019121531_Z3E3B4/Paris-Scenery.jpg?tr=w-780%2Ch-437%2Cfo-auto" alt="Paris">
+            <img src="https://i.natgeofe.com/n/9e138c12-712d-41d4-9be9-5822a3251b5a/brandenburggate-berlin-germany.jpg?w=2560&h=1440" alt="Berlin">
+            <img src="https://thumbs.dreamstime.com/b/bridges-prague-czech-republic-scenic-summer-aerial-view-old-town-pier-architecture-charles-bridge-over-vltava-river-42628509.jpg" alt="Prague">
+            <img src="https://media.istockphoto.com/id/1323460157/photo/rome-italy-night-city-skyline-at-rome-colosseum-empty-nobody.jpg?s=612x612&w=0&k=20&c=jNZmY84PLS18eS1dMSoAH3rjKjdT4ArdmE5hpv2gbw0=" alt="Rome">
+            <img src="https://tomorrowalgarve.com/wp-content/uploads/2021/06/tomorrow-algarve-magazine-community-news-algarve-the-search-for-the-1755-great-lisbon-earthquake-big.jpg" alt="Lisbon">
+        </div>
+
+        <a href="index.html" title="Return to the Den. Not much else to do here, right?" class="return-link">RETURN</a>
+</body>
+
+</html>

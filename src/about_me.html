@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About Giulio and FAQ</title>
+    </head>
+    <style>
+        body{
+        font-family: "Trebuchet MS", Tahoma, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        }
+        .faq {
+            margin-bottom: 20px;
+        }
+        .question {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+        }
+        .question .icon {
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+        .answer {
+            color: #34495e;
+            margin-left: 25px;
+            display: none;
+        }
+        .collapsed .icon {
+            transform: rotate(90deg);
+        }
+        .return-link {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 16px;
+            color: #000000;
+            text-decoration: none;
+        }
+        .return-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+    <body>
+        <h1>About Me</h1>
+            <p>What is there to say about the quaint bald Italian man? Many make the quick and easy joke of name-calling him the "Mussolini of the 21st century" because of course they do. However, that is reserved for the friendly jabs from his closest acquainteces, and he takes it in stride. It doesn't help that he has a book or two about that infamous historical figure.</p>
+            <p>The man is worldly, born in South Africa, grown up in Mozambique, and having lived, studied and worked in Portugal, he has also been in many other places. A translator by trade, he aspires to be a writer, but the circumstances of life have forced him upon a road he once didn't consider as one for himself. A foolish thought, now that he is immersing himself in the world of programming. With over 30 years-worth of experience behind his back, Giulio is ready to take on the challenge of programming and system architectures so that he may have a more stable and productive future.</p>
+            <p>Whether or not he will be successful will be a matter of perseverence and discipline, but also one of intellectual curiousity and ability to work with others. May he do well in his personal quest to self-betterment.</p>
+
+        <h1>Frequently Asked Questions</h1>
+    
+        <div class="faq">
+            <p class="question"><span class="icon">▶</span> Q: What is this server for exactly?</p>
+            <p class="answer">A: This server is a private platform for Giulio's System Architecture project. It may evolve into something else, but this is its primary purpose.</p>
+        </div>
+    
+        <div class="faq">
+            <p class="question"><span class="icon">▶</span> Q: Who can access this server?</p>
+            <p class="answer">A: Beyond the class's instructor and the fellow students, likely nobody else except for close friends. This, of course, may change in the future.</p>
+        </div>
+    
+        <div class="faq">
+             <p class="question"><span class="icon">▶</span> Q: What made Giulio choose programming as a potential career path?</p>
+             <p class="answer">A: It was due to a lackluster translation job and a failed attempt at becoming an IT communications specialist for the Italian Foreign Ministry. .</p>
+          </div>
+    
+        <div class="faq">
+              <p class="question"><span class="icon">▶</span> Q: We ask who Giulio is and what he is doing. But HOW is Giulio doing?</p>
+              <p class="answer">A: Far better than he once was. Thank you for asking!</p>
+        </div>
+
+        <a href="index.html" title="Return to the Den. Not much else to do here, right?" class="return-link">RETURN</a>
+
+        <script>
+            document.querySelectorAll('.question').forEach(item => {
+                item.addEventListener('click', () => {
+                    const answer = item.nextElementSibling;
+                    const icon = item.querySelector('.icon');
+
+                    if (answer.style.display === 'none' || answer.style.display === '') {
+                        answer.style.display = 'block';
+                        icon.textContent = '▼';
+                    }
+
+                    else {
+                        answer.style.display = 'none';
+                        icon.textContent = '▶'
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

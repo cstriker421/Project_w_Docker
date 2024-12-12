@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News Feed (Google RSS Feed)</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                margin: 0;
+                font-family: Arial, sans-serif;
+                background-color: #f4f4f4;
+            }
+            .container {
+                text-align: center;
+                font-weight: bold;
+                color: #2c3e50;
+                width: 80%;
+                padding: 20px;
+                background-color: white;
+                border-radius: 8px;
+            }
+            .return-link {
+	            position: absolute;
+    	        bottom: 20px;
+        	    left: 50%;
+            	transform: translateX(-50%);
+	            font-size: 16px;
+    	        color: #000000;
+        	    text-decoration: none;
+	        }
+    	    .return-link:hover {
+        	    text-decoration: underline;
+       		}
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Latest News</h1>
+            <div id="rss-feed">Loading...</div>
+        </div>
+
+        <script>
+            fetch('https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://news.google.com/rss'))
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('rss-feed').innerHTML = data.items.map(item => 
+                        `<p><a href="${item.link}" target="_blank">${item.title}</a></p>`
+                    ).join('');
+                })
+            .catch(error => document.getElementById('rss-feed').innerText = 'Failed to load news.');
+        </script>
+
+        <a href="index.html" title="Return to the Den. Not much else to do here, right?" class="return-link">RETURN</a>
+
+    </body>
+</html>
