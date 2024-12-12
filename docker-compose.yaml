@@ -1,9 +1,7 @@
-# To run this, run "docker compose up"
-
 services:
   web:
     image: nginx
     volumes:
-      - ./src/index.html:/usr/share/nginx/html/index.html
+      - ./src:/usr/share/nginx/html/
     ports:
-      - 8080:80
+      - "8080:80"
